@@ -1,0 +1,170 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import Layout from "../layouts/Layout.astro";
+import SocialList from "../components/SocialList.astro";
+import aboutImage from "../assets/about-me.jpg";
+
+const projects = [
+  {
+    title: "Corpqlo",
+    description: "",
+    tags: ["React Native"],
+    link: "",
+  },
+  {
+    title: "DesiBurger",
+    description: "",
+    tags: ["React Native"],
+    link: "",
+  },
+  {
+    title: "Silence",
+    description: "",
+    tags: ["React Native"],
+    link: "",
+  },
+  {
+    title: "Ewaste social",
+    description: "",
+    tags: ["Angular"],
+    link: "",
+  },
+  {
+    title: "Coreyo",
+    description: "",
+    tags: ["ReactJs", "Tailwind"],
+    link: "",
+  },
+  {
+    title: "Contract Driver",
+    description: "",
+    tags: ["NextJs", "TailwindCss"],
+    link: "",
+  },
+
+  {
+    title: "Kush garderns NFT",
+    description: "",
+    tags: ["NextJs", "TailwindCss"],
+    link: "",
+  },
+  {
+    title: "Cold Blooded NFT",
+    description: "",
+    tags: ["NextJs", "TailwindCss"],
+    link: "",
+  },
+  {
+    title: "Degatchi Blog",
+    description: "",
+    tags: ["AstroJs", "TailwindCss"],
+    link: "",
+  },
+  {
+    title: "Foolproof labs",
+    description: "",
+    tags: ["NextJs", "TailwindCss"],
+    link: "",
+  },
+];
+---
+
+<Layout title="Saurav | Portfolio">
+  <main class="max-w-5xl mx-auto px-6 overflow-hidden">
+    <section
+      class="min-h-screen flex flex-col justify-center items-start py-28"
+    >
+      <!-- <Starfield /> -->
+      <h1 style="--order: 5;" class="mb-4 text-green-400 slide-in-hidden">
+        Hi there, I'm
+      </h1>
+      <h2
+        style="--order: 6;"
+        class="sm:text-6xl text-4xl font-bold text-slate-300 mb-6 slide-in-hidden"
+      >
+        Saurav Sidharthan
+      </h2>
+      <h3
+        style="--order: 7;"
+        style="word-spacing: -10px;"
+        class="sm:text-5xl text-2xl mb-6 slide-in-hidden"
+      >
+        I build web3 apps for a decentralized world! 🚀
+      </h3>
+      <p style="--order: 8;" class="mb-6 max-w-xl slide-in-hidden">
+        I'm a Fullstack developer with 3 years of experience, specializing in
+        web3 app development. Constantly learning and exploring new technologies
+        to stay at the forefront of the field.
+      </p>
+      <SocialList />
+    </section>
+
+    <!-- About me -->
+    <section
+      class="min-h-screen flex sm:flex-row flex-col justify-center sm:space-x-20 items-start py-20"
+    >
+      <div>
+        <h2 class="text-3xl font-bold text-slate-300 mb-6 slide-in-hidden">
+          About me
+        </h2>
+        <p class="mb-6 max-w-xl slide-in-hidden">
+          Hi there! I'm a postgraduate in Computer Application with over 3 years
+          of experience in software development. I have a strong command of
+          various frameworks and libraries in Javascript. I have experience in
+          web design and development, including work with databases and design
+          tools. I'm always eager to learn and take on new challenges. In my
+          spare time, I love traveling and exploring new places on my motorcycle
+        </p>
+        <p class="mb-2 max-w-xl slide-in-hidden">Technologies:</p>
+        <ul class="list-disc grid grid-cols-2 ml-4 slide-in-hidden">
+          <li>ReactJs</li>
+          <li>NextJs</li>
+          <li>React Native</li>
+          <li>NodeJs</li>
+          <li>TailwindCSS</li>
+          <li>AWS</li>
+          <li>EtherJS</li>
+          <li>Wagmi</li>
+          <!-- ... -->
+        </ul>
+      </div>
+      <Image
+        class="sm:w-5/12 w-full h-full slide-in-hidden pt-10 sm:pt-0"
+        src={aboutImage}
+        alt="Saurav Icon"
+        loading="eager"
+      />
+    </section>
+
+    <!-- Projects -->
+    <section
+      class="slide-in-hidden min-h-screen flex flex-col justify-center items-start py-20"
+    >
+      <h2 class="text-3xl font-bold text-slate-300 mb-12">Projects</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 w-full gap-4">
+        {
+          projects.map((item) => (
+            <div class="aspect-square w-full border border-dashed border-green-500 p-4">
+              <p class=" font-bold">{item.title}</p>
+              <p class="text-sm">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      class="flex flex-col items-center justify-center text-center py-36"
+    >
+      <h2 class="text-4xl font-bold text-slate-300 mb-6">Get in touch</h2>
+      <p class="mb-6 text-center"></p>
+      <a
+        href="#"
+        class="text-green-500 glitch inline-flex items-center justify-center whitespace-nowrap border border-green-500 border-dotted px-4 py-1 text-base font-medium shadow-sm hover:bg-slate-700"
+        >Mail me</a
+      >
+    </section>
+  </main>
+</Layout>
